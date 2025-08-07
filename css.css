@@ -68,4 +68,24 @@ body {
 #next-btn:hover {
   background-color: #45a049;
 }
+#theme-selection {
+  text-align: center;
+  padding: 40px;
+}
+
+.theme-btn {
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 18px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-btn:hover {
+  background-color: #1976D2;
+}
 

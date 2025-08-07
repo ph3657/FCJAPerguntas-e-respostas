@@ -1,56 +1,58 @@
-const questions = [
-  {
-    question: "Qual é a capital do Brasil?",
-    options: ["São Paulo", "Brasília", "Rio de Janeiro", "Salvador"],
-    answer: "Brasília"
-  },
-  {
-    question: "Quem escreveu 'Dom Casmurro'?",
-    options: ["Machado de Assis", "Carlos Drummond", "Clarice Lispector", "Monteiro Lobato"],
-    answer: "Machado de Assis"
-  },
-  {
-    question: "Quanto é 7 x 8?",
-    options: ["56", "48", "64", "58"],
-    answer: "56"
-  },
-  {
-    question: "Qual planeta é conhecido como planeta vermelho?",
-    options: ["Marte", "Júpiter", "Saturno", "Vênus"],
-    answer: "Marte"
-  },
-  {
-    question: "Quem pintou a Mona Lisa?",
-    options: ["Leonardo da Vinci", "Van Gogh", "Picasso", "Michelangelo"],
-    answer: "Leonardo da Vinci"
-  },
-  {
-    question: "Qual é o maior oceano do planeta?",
-    options: ["Atlântico", "Índico", "Ártico", "Pacífico"],
-    answer: "Pacífico"
-  },
-  {
-    question: "Qual é o elemento químico com símbolo O?",
-    options: ["Ouro", "Oxigênio", "Osmio", "Ozônio"],
-    answer: "Oxigênio"
-  },
-  {
-    question: "Em que continente está o Egito?",
-    options: ["Ásia", "Europa", "África", "América"],
-    answer: "África"
-  },
-  {
-    question: "Qual animal é conhecido como rei da selva?",
-    options: ["Elefante", "Leão", "Tigre", "Gorila"],
-    answer: "Leão"
-  },
-  {
-    question: "Qual o idioma mais falado no mundo?",
-    options: ["Inglês", "Espanhol", "Chinês mandarim", "Hindi"],
-    answer: "Chinês mandarim"
-  }
-];
+const allQuestions = {
+  animais: [
+    {
+      question: "Qual animal é conhecido como o rei da selva?",
+      options: ["Tigre", "Leão", "Elefante", "Pantera"],
+      answer: "Leão"
+    },
+    {
+      question: "Qual desses animais é um mamífero aquático?",
+      options: ["Polvo", "Tubarão", "Golfinho", "Lula"],
+      answer: "Golfinho"
+    },
+    {
+      question: "Qual ave é símbolo da paz?",
+      options: ["Coruja", "Águia", "Pomba", "Gavião"],
+      answer: "Pomba"
+    }
+  ],
+  geografia: [
+    {
+      question: "Qual é o maior oceano do planeta?",
+      options: ["Atlântico", "Índico", "Ártico", "Pacífico"],
+      answer: "Pacífico"
+    },
+    {
+      question: "Qual país tem o formato de uma bota?",
+      options: ["Espanha", "México", "Itália", "Austrália"],
+      answer: "Itália"
+    },
+    {
+      question: "Em que continente está o Brasil?",
+      options: ["Europa", "África", "América do Sul", "Ásia"],
+      answer: "América do Sul"
+    }
+  ],
+  historia: [
+    {
+      question: "Quem descobriu o Brasil?",
+      options: ["Pedro Álvares Cabral", "Dom Pedro I", "Vasco da Gama", "Tiradentes"],
+      answer: "Pedro Álvares Cabral"
+    },
+    {
+      question: "Em que ano ocorreu a Independência do Brasil?",
+      options: ["1822", "1889", "1500", "1808"],
+      answer: "1822"
+    },
+    {
+      question: "Quem foi o primeiro presidente do Brasil?",
+      options: ["Getúlio Vargas", "Deodoro da Fonseca", "Lula", "Juscelino Kubitschek"],
+      answer: "Deodoro da Fonseca"
+    }
+  ]
+};
 
+let selectedQuestions = [];
 let currentQuestion = 0;
 let score = 0;
 
@@ -58,9 +60,22 @@ const questionEl = document.getElementById('question');
 const optionsEl = document.getElementById('options');
 const nextBtn = document.getElementById('next-btn');
 const scoreEl = document.getElementById('score');
+const quizContainer = document.getElementById('quiz-container');
+const themeSelection = document.getElementById('theme-selection');
+
+function startQuiz(theme) {
+  selectedQuestions = allQuestions[theme];
+  currentQuestion = 0;
+  score = 0;
+
+  themeSelection.style.display = "none";
+  quizContainer.style.display = "block";
+
+  showQuestion();
+}
 
 function showQuestion() {
-  const q = questions[currentQuestion];
+  const q = selectedQuestions[currentQuestion];
   questionEl.textContent = q.question;
   optionsEl.innerHTML = "";
 
@@ -74,7 +89,7 @@ function showQuestion() {
 }
 
 function checkAnswer(selected) {
-  const correct = questions[currentQuestion].answer;
+  const correct = selectedQuestions[currentQuestion].answer;
   if (selected === correct) {
     score++;
   }
@@ -89,7 +104,7 @@ function checkAnswer(selected) {
 
 nextBtn.onclick = () => {
   currentQuestion++;
-  if (currentQuestion < questions.length) {
+  if (currentQuestion < selectedQuestions.length) {
     showQuestion();
     nextBtn.style.display = "none";
   } else {
@@ -101,7 +116,5 @@ function showScore() {
   questionEl.style.display = "none";
   optionsEl.style.display = "none";
   nextBtn.style.display = "none";
-  scoreEl.textContent = `Você acertou ${score} de ${questions.length} perguntas!`;
+  scoreEl.textContent = `Você acertou ${score} de ${selectedQuestions.length} perguntas!`;
 }
-
-showQuestion();
