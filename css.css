@@ -24,7 +24,7 @@ body {
 }
 
 .question {
-  font-size: 28px;
+  font-size: 32px; /* aumentado */
   font-weight: bold;
   margin-bottom: 30px;
 }
@@ -32,11 +32,11 @@ body {
 .option {
   display: block;
   margin: 15px auto;
-  padding: 15px 25px;
+  padding: 18px 25px; /* aumentado */
   border-radius: 12px;
   background-color: #e0e0e0;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 22px; /* aumentado */
   width: 80%;
   max-width: 500px;
   transition: background-color 0.3s;
@@ -47,12 +47,12 @@ body {
 }
 
 #score {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   margin-top: 30px;
 }
 
-#next-btn {
+#next-btn, #restart-btn {
   margin-top: 25px;
   padding: 12px 24px;
   font-size: 18px;
@@ -65,7 +65,7 @@ body {
   transition: background-color 0.3s;
 }
 
-#next-btn:hover {
+#next-btn:hover, #restart-btn:hover {
   background-color: #45a049;
 }
 #theme-selection {
