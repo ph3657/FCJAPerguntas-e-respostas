@@ -1,13 +1,18 @@
 const allQuestions = {
-  animais: [
-    { question: "Qual animal é conhecido como o rei da selva?", options: ["Tigre", "Leão", "Elefante", "Pantera"], answer: "Leão" },
-    { question: "Qual desses animais é um mamífero aquático?", options: ["Polvo", "Tubarão", "Golfinho", "Lula"], answer: "Golfinho" },
-    { question: "Qual ave é símbolo da paz?", options: ["Coruja", "Águia", "Pomba", "Gavião"], answer: "Pomba" }
+  JoséAmérico: [
+    { question: "Qual foi a obra mais famosa de José Américo de Almeida?", options: ["O Guarani", "A Bagaceira", "O Quinze", "Os Sertões"], answer: "A Bagaceira" },
+    { question: "José Américo de Almeida foi governador de qual estado brasileiro?", options: ["Ceará", "Bahia", "Paraíba", "Rio Grande do Norte"], answer: "Paraíba" },
+    { question: "Além de escritor, José Américo também atuou como?", options: ["Ministro de Getúlio Vargas", "Ator de cinema", "Compositor musical", " Empresário do café"], answer: "Ministro de Getúlio Vargas" },
+    { question: "Em que ano nasceu José Américo de Almeida?", options: ["1887", "1895", "1879", "1880"], answer:"1887"},
+    { question: "Qual movimento literário sua obra A Bagaceira ajudou a consolidar?", options: ["Modernismo", "Regionalismo nordestino", "Parnasianismo", "Naturalismo"], answer:"Regionalismo nordestino"},
   ],
-  geografia: [
-    { question: "Qual é o maior oceano do planeta?", options: ["Atlântico", "Índico", "Ártico", "Pacífico"], answer: "Pacífico" },
-    { question: "Qual país tem o formato de uma bota?", options: ["Espanha", "México", "Itália", "Austrália"], answer: "Itália" },
-    { question: "Em que continente está o Brasil?", options: ["Europa", "África", "América do Sul", "Ásia"], answer: "América do Sul" }
+  gibi: [
+    { question: "Qual destes quadrinistas é paraibano e autor de obras premiadas como Bando de Dois?", options: ["Mauricio de Sousa", "Danilo Beyruth", "Laerte Coutinho", "Ziraldo"], answer: "Danilo Beyruth" },
+    { question: "Qual é o gibi mais famoso criado por Mauricio de Sousa?", options: ["Turma da Mônica", "Menino Maluquinho", "Chico Bento Moço", "Capitão Feio"], answer: "Turma da Mônica" },
+    { question: "Qual destes quadrinhos brasileiros teve forte inspiração no folclore nordestino?", options: ["Mônica Jovem", "Menino Maluquinho", "Lampião", "O Doutrinador"], answer: "Lampião" },
+    { question: "Qual evento de quadrinhos é um dos mais importantes da Paraíba?", options: ["Bienal do Livro de São Paulo", "CCXP", "HQPB", "Festival Internacional de Quadrinhos de Belo Horizonte"], answer: "HQPB" },
+    { question: "Em que ano surgiu a revista O Gibi, cujo nome se tornou sinônimo de revista em quadrinhos no Brasil?", options: ["1939", "1920", "1968", "1955"], answer: "1939" },
+
   ],
   historia: [
     { question: "Quem descobriu o Brasil?", options: ["Pedro Álvares Cabral", "Dom Pedro I", "Vasco da Gama", "Tiradentes"], answer: "Pedro Álvares Cabral" },
