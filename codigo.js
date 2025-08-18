@@ -5,6 +5,7 @@ const allQuestions = {
     { question: "Além de escritor, José Américo também atuou como?", options: ["Ministro de Getúlio Vargas", "Ator de cinema", "Compositor musical", " Empresário do café"], answer: "Ministro de Getúlio Vargas" },
     { question: "Em que ano nasceu José Américo de Almeida?", options: ["1887", "1895", "1879", "1880"], answer:"1887"},
     { question: "Qual movimento literário sua obra A Bagaceira ajudou a consolidar?", options: ["Modernismo", "Regionalismo nordestino", "Parnasianismo", "Naturalismo"], answer:"Regionalismo nordestino"},
+    { question: "José Américo de Almeida nasceu em qual cidade paraibana?", options: ["Campina Grande", "João Pessoa", "Areia", "Sousa"], answer:"Areia"},
   ],
   gibi: [
     { question: "Qual destes quadrinistas é paraibano e autor de obras premiadas como Bando de Dois?", options: ["Mauricio de Sousa", "Danilo Beyruth", "Laerte Coutinho", "Ziraldo"], answer: "Danilo Beyruth" },
