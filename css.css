@@ -4,13 +4,17 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #a34242;
+  background-color: #c4bcbc;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-image: url(Fundo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #quiz-container {
@@ -71,6 +75,11 @@ body {
 #theme-selection {
   text-align: center;
   padding: 40px;
+  background-color:#f8f8f5e1;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .theme-btn {
@@ -78,7 +87,7 @@ body {
   margin: 10px;
   font-size: 18px;
   background-color: #2196F3;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 8px;
   cursor: pointer;
