@@ -1,11 +1,17 @@
 const allQuestions = {
   JoséAmérico: [
-    { question: "Qual foi a obra mais famosa de José Américo de Almeida?", options: ["O Guarani", "A Bagaceira", "O Quinze", "Os Sertões"], answer: "A Bagaceira" },
-    { question: "José Américo de Almeida foi governador de qual estado brasileiro?", options: ["Ceará", "Bahia", "Paraíba", "Rio Grande do Norte"], answer: "Paraíba" },
-    { question: "Além de escritor, José Américo também atuou como?", options: ["Ministro de Getúlio Vargas", "Ator de cinema", "Compositor musical", " Empresário do café"], answer: "Ministro de Getúlio Vargas" },
-    { question: "Em que ano nasceu José Américo de Almeida?", options: ["1887", "1895", "1879", "1880"], answer:"1887"},
-    { question: "Qual movimento literário sua obra A Bagaceira ajudou a consolidar?", options: ["Modernismo", "Regionalismo nordestino", "Parnasianismo", "Naturalismo"], answer:"Regionalismo nordestino"},
-    { question: "José Américo de Almeida nasceu em qual cidade paraibana?", options: ["Campina Grande", "João Pessoa", "Areia", "Sousa"], answer:"Areia"},
+    { question: "Qual foi a obra mais famosa de José Américo de Almeida?", 
+      options: ["O Guarani", "A Bagaceira", "O Quinze", "Os Sertões"], answer: "A Bagaceira" },
+    { question: "José Américo de Almeida foi governador de qual estado brasileiro?", 
+      options: ["Ceará", "Bahia", "Paraíba", "Rio Grande do Norte"], answer: "Paraíba" },
+    { question: "Além de escritor, José Américo também atuou como?", 
+      options: ["Ministro de Getúlio Vargas", "Ator de cinema", "Compositor musical", " Empresário do café"], answer: "Ministro de Getúlio Vargas" },
+    { question: "Em que ano nasceu José Américo de Almeida?", 
+      options: ["1887", "1895", "1879", "1880"], answer:"1887"},
+    { question: "Qual movimento literário sua obra A Bagaceira ajudou a consolidar?", 
+      options: ["Modernismo", "Regionalismo nordestino", "Parnasianismo", "Naturalismo"], answer:"Regionalismo nordestino"},
+    { question: "José Américo de Almeida nasceu em qual cidade paraibana?", 
+      options: ["Campina Grande", "João Pessoa", "Areia", "Sousa"], answer:"Areia"},
   ],
   gibi: [
     { question: "Qual destes quadrinistas é paraibano e autor de obras premiadas como Bando de Dois?", options: ["Mauricio de Sousa", "Danilo Beyruth", "Laerte Coutinho", "Ziraldo"], answer: "Danilo Beyruth" },
@@ -33,6 +39,7 @@ const restartBtn = document.getElementById('restart-btn');
 const scoreEl = document.getElementById('score');
 const quizContainer = document.getElementById('quiz-container');
 const themeSelection = document.getElementById('theme-selection');
+const backBtn = document.getElementById('back-btn');
 
 function startQuiz(theme) {
   selectedQuestions = allQuestions[theme];
@@ -46,6 +53,7 @@ function startQuiz(theme) {
   optionsEl.style.display = "block";
   scoreEl.textContent = "";
   restartBtn.style.display = "none";
+  backBtn.style.display = "inline-block";
 
   showQuestion();
 }
@@ -87,11 +95,16 @@ nextBtn.onclick = () => {
     showScore();
   }
 };
+backBtn.onclick = () => {
+  quizContainer.style.display = "none";
+  themeSelection.style.display = "block";
+};
 
 function showScore() {
   questionEl.style.display = "none";
   optionsEl.style.display = "none";
   nextBtn.style.display = "none";
+  backBtn.style.display = "none";
   scoreEl.textContent = `Você acertou ${score} de ${selectedQuestions.length} perguntas!`;
   restartBtn.style.display = "inline-block";
 }
