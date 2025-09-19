@@ -4,43 +4,45 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #c4bcbc;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(Fundo.png);
+
+  /* 🔹 Imagem de fundo escolar */
+  background: url("Fundo.png") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-#quiz-container {
-  background-color: #fff;
-  padding: 40px;
+/* Container principal */
+#quiz-container, #theme-selection {
+  background-color: rgba(255, 255, 255, 0.9); /* fundo semi-transparente */
+  padding: 5vh 5vw;
   border-radius: 20px;
   width: 90%;
-  max-width: 700px;
+  max-width: 480px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-align: center;
 }
 
+/* Pergunta */
 .question {
-  font-size: 32px; /* aumentado */
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 4vh;
 }
 
+/* Opções */
 .option {
   display: block;
-  margin: 15px auto;
-  padding: 18px 25px; /* aumentado */
+  margin: 2vh auto;
+  padding: 1.5vh 2vw;
   border-radius: 12px;
   background-color: #e0e0e0;
   cursor: pointer;
-  font-size: 22px; /* aumentado */
+  font-size: 1.2rem;
   width: 80%;
   max-width: 500px;
   transition: background-color 0.3s;
@@ -50,16 +52,18 @@ body {
   background-color: #d0d0d0;
 }
 
+/* Pontuação */
 #score {
-  font-size: 26px;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 3vh;
 }
 
-#next-btn, #restart-btn {
-  margin-top: 25px;
-  padding: 12px 24px;
-  font-size: 18px;
+/* Botões */
+#next-btn, #restart-btn, #back-btn {
+  margin-top: 3vh;
+  padding: 1.2vh 2.4vw;
+  font-size: 1rem;
   cursor: pointer;
   border: none;
   background-color: #4CAF50;
@@ -69,25 +73,17 @@ body {
   transition: background-color 0.3s;
 }
 
-#next-btn:hover, #restart-btn:hover {
+#next-btn:hover, #restart-btn:hover, #back-btn:hover {
   background-color: #45a049;
 }
-#theme-selection {
-  text-align: center;
-  padding: 40px;
-  background-color:#f8f8f5e1;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
 
+/* Seleção de tema */
 .theme-btn {
-  padding: 12px 25px;
-  margin: 10px;
-  font-size: 18px;
+  padding: 1.2vh 2.5vw;
+  margin: 1vh;
+  font-size: 1rem;
   background-color: #2196F3;
-  color: rgb(255, 255, 255);
+  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -97,19 +93,46 @@ body {
 .theme-btn:hover {
   background-color: #1976D2;
 }
-#back-btn {
-  margin-top: 25px;
-  padding: 12px 24px;
-  font-size: 18px;
-  cursor: pointer;
-  border: none;
-  background-color: #f44336; /* vermelho */
-  color: white;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .question {
+    font-size: 1.5rem;
+  }
+  .option {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+  #quiz-container, #theme-selection {
+    padding: 20px;
+  }
 }
 
-#back-btn:hover {
-  background-color: #d32f2f;
+@media (min-width: 1600px) {
+  .question {
+    font-size: 2.5rem;
+  }
+  .option {
+    font-size: 1.5rem;
+    padding: 20px 28px;
+  }
+  #quiz-container, #theme-selection {
+    max-width: 900px;
+  }
 }
+
+#assinatura {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.6);
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+
 
